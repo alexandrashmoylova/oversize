@@ -6,24 +6,157 @@
     <link rel="stylesheet" href="/style.scss" />
     <title>Oversize Group</title>
   </head>
-  <body>
-    <div class="container">
+  <body class="body">
+    <div class="wrapper">
       <header class="header">
-        <div class="header wrapper">
-          <a class="header__button button button-call" href="tel:+79297133700"
-            >Позвонить</a
-          >
-        </div>
-        <div class="header__logo logo">
-          <img
-            src="/src/img/logo-oversize.svg"
-            width="286"
-            height="44"
-            alt="Логотип компании Oversize"
-          />
+        <div class="header__wrapper container">
+          <div class="header__inner">
+            <a class="header__button button button-call" href="tel:+79297133700"
+              >Позвонить</a
+            >
+            <a
+              class="header__logo logo"
+              href="index.html"
+              title="На главную Oversize"
+            >
+              <img
+                src="/src/img/logo-oversize.png"
+                width="286"
+                height="44"
+                alt="Логотип компании Oversize"
+              />
+            </a>
+          </div>
         </div>
       </header>
-      <main></main>
+      <main class="main">
+        <section class="hero">
+          <div class="hero__wrapper">
+            <div class="intro">
+              <div class="intro__media">
+                <video
+                  class="intro__video"
+                  preload="auto"
+                  autoplay
+                  muted
+                  loop
+                  poster="src/img/truck-poster.jpg"
+                >
+                  <source src="src/video/truck.mp4" type="video/mp4" />
+                  <source src="src/video/truck.webm" type="video/webm" />
+                </video>
+              </div>
+            </div>
+            <div class="hero__content">
+              <h1 class="hero__title title">
+                Перевозка негабаритных и тяжеловесных грузов
+              </h1>
+            </div>
+          </div>
+        </section>
+        <section class="trucks">
+          <div class="trucks__wrapper">
+            <img
+            src="src/img/trucks-paint.png"
+            alt="Изображение грузовиков с грузом"
+            width="394"
+            height="263"
+          />
+          </div>
+        </section>
+        <section class="description">
+          <div class="description__wrapper">
+            <ul class="description-list">
+              <li class="description-list__item">
+                <h2 class="description-list__title">
+                  Доставка грузов из Китая
+                </h2>
+                <img
+                  src="src/img/white-barrel.jpg"
+                  width="375"
+                  height="548"
+                  alt="Изображение груза доставленного из Китая"
+                />
+              </li>
+              <li class="description-list__item">
+                <h2 class="description-list__title">
+                  Таможенное оформление грузов
+                </h2>
+                <img
+                  src="src/img/custom.jpg"
+                  width="375"
+                  height="548"
+                  alt="Изображение оформления груза на таможне"
+                />
+              </li>
+              <li class="description-list__item">
+                <h2 class="description-list__title">Грузоподъемная техника</h2>
+                <img
+                  src="src/img/weight-service.jpg"
+                  width="375"
+                  height="548"
+                  alt="Изображение грузоподъемной техники"
+                />
+              </li>
+              <li class="description-list__item">
+                <h2 class="description-list__title">
+                  Перевозка негабаритных тяжеловесных грузов
+                </h2>
+                <img
+                  src="src/img/big-tube.jpg"
+                  width="375"
+                  height="548"
+                  alt="Изображение крупного негабаритного груза"
+                />
+              </li>
+              <li class="description-list__item">
+                <h2 class="description-list__title">Такелажные работы</h2>
+                <img
+                  src="src/img/rigging.jpg"
+                  width="375"
+                  height="548"
+                  alt="Изображение такелажных работ"
+                />
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="slider-gallery">
+          <div class="slider-gallery__wrapper">
+            <ul class="slider-list">
+              <li class="slider-list__item">
+                <img src="src/img/slider.jpg" alt="" />
+              </li>
+              <li class="slider-list__item">
+                <img src="src/img/slider-one.jpg" alt="" />
+              </li>
+              <li class="slider-list__item">
+                <img src="src/img/slider-two.jpg" alt="" />
+              </li>
+              <li class="slider-list__item">
+                <img src="src/img/slider-three.jpg" alt="" />
+              </li>
+              <li class="slider-list__item">
+                <img src="src/img/slider-four.jpg" alt="" />
+              </li>
+            </ul>
+          </div>
+        </section>
+        <footer class="footer">
+          <div class="footer__wrapper">
+            <div class="footer__logo logo-yellow">
+              <img
+                src="src/img/logo-yellow.png"
+                width="202"
+                height="26"
+                alt=""
+              />
+            </div>
+            <p class="footer__adress">Самарская область<br />г. Тольятти</p>
+            <button class="footer__button button">Заказать</button>
+          </div>
+        </footer>
+      </main>
     </div>
   </body>
 </html>
