@@ -35,5 +35,8 @@
   "browserslist": [
     "last 2 Chrome versions",
     "last 2 Firefox versions"
-  ]
+  ],
+  "dependencies": {
+    "swiper": "^8.4.4"
+  }
 }

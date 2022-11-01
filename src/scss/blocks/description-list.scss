@@ -2,16 +2,24 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
 
   &__item {
     position: relative;
     width: 100%;
+    animation-name: fade;
+    animation-duration: 1.5s;
+
 
     img {
-        @media (max-width: 600px) {
-          width: 100%;
-        }
+      @media (max-width: 600px) {
+        width: 100%;
       }
+    }
 
     &::before {
       content: "";
@@ -19,7 +27,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 130px;
+      height: 180px;
       z-index: 5;
       background: linear-gradient(
         180deg,
@@ -28,6 +36,15 @@
       );
     }
   }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+}
 
   &__wrapper {
     position: absolute;
@@ -38,11 +55,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px 59px;
   }
 
   &__title {
     margin: 0;
-    padding: 30px;
     font-size: 21px;
     line-height: calc(25 / 21);
     text-align: center;
