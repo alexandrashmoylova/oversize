@@ -1,7 +1,6 @@
 @import '../node_modules/swiper/swiper-bundle.min.css';
 @import './scss/fonts.scss';
 @import './scss/common.scss';
-@import './scss/blocks/container.scss';
 @import './scss/blocks/header.scss';
 @import './scss/blocks/button.scss';
 @import './scss/blocks/hero.scss';
@@ -14,4 +13,10 @@
 @import './scss/blocks/swiper-pagination.scss';
 @import './scss/blocks/swiper-pagination-bullet.scss';
 @import './scss/blocks/swiper-pagination-bullet-active.scss';
+@import './scss/blocks/slider-gallery.scss';
 @import './scss/blocks/swiper2.scss';
+@import './scss/blocks/swiper2-wrapper.scss';
+@import './scss/blocks/swiper2-slide.scss';
+@import './scss/blocks/swiper-button-next.scss';
+@import './scss/blocks/swiper-button-prev.scss';
+@import './scss/blocks/footer.scss'

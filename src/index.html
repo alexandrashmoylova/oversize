@@ -9,7 +9,7 @@
   <body class="body">
     <div class="wrapper">
       <header class="header">
-        <div class="header__wrapper container">
+        <div class="header__wrapper">
           <div class="header__inner">
             <a class="header__button button button-call" href="tel:+79297133700"
               >Позвонить</a
@@ -136,43 +136,56 @@
         <section class="slider-gallery">
           <div class="slider-gallery__wrapper">
             <div class="swiper swiper2">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="src/img/slider.jpg" alt="">
+              <div class="swiper-wrapper swiper2-wrapper">
+                <div class="swiper-slide swiper2-slide">
+                  <img
+                    src="src/img/slider.jpg"
+                    width="302"
+                    height="201"
+                    alt=""
+                  />
                 </div>
-                <div class="swiper-slide">
-                  <img src="src/img/slider-one.jpg" alt="">
+                <div class="swiper-slide swiper2-slide">
+                  <img
+                    src="src/img/slider-one.jpg"
+                    width="302"
+                    height="201"
+                    alt=""
+                  />
                 </div>
-                <div class="swiper-slide">
-                  <img src="src/img/slider-two.jpg" alt="">
+                <div class="swiper-slide swiper2-slide">
+                  <img src="src/img/slider-two.jpg" alt="" />
                 </div>
-                <div class="swiper-slide">
-                  <img src="src/img/slider-three.jpg" alt="">
+                <div class="swiper-slide swiper2-slide">
+                  <img src="src/img/slider-three.jpg" alt="" />
                 </div>
-                <div class="swiper-slide">
-                  <img src="src/img/slider-four.jpg" alt="">
+                <div class="swiper-slide swiper2-slide">
+                  <img src="src/img/slider-four.jpg" alt="" />
                 </div>
               </div>
-            
-              <!-- If we need navigation buttons -->
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-            
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
         </section>
         <footer class="footer">
           <div class="footer__wrapper">
-            <div class="footer__logo logo-yellow">
-              <img
-                src="src/img/logo-yellow.png"
-                width="202"
-                height="26"
-                alt=""
-              />
+            <div class="footer__inner">
+              <a class="footer__logo logo-yellow" href="index.html">
+                <img
+                  src="src/img/logo-yellow.png"
+                  width="202"
+                  height="26"
+                  alt=""
+                />
+              </a>
+              <p class="footer__adress">Самарская область</p>
+              <p class="footer__adress">г. Тольятти</p>
+              <a class="footer__tel" href="tel:+79297133700"
+              >+79297133700</a
+            >
+              <a class="footer__button button">Заказать</a>
             </div>
-            <p class="footer__adress">Самарская область<br />г. Тольятти</p>
-            <button class="footer__button button">Заказать</button>
           </div>
         </footer>
       </main>
