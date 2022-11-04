@@ -6,4 +6,8 @@
   border-right: 10px solid #000;
   border-bottom: 10px solid transparent;
   color: transparent;
+
+  @media (min-width: 768px) {
+    left: 20px;
+  }
 }

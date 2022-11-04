@@ -1,24 +1,28 @@
 .header {
-    min-width: 320px;
-    min-height: 60px;
+  min-width: 320px;
+  width: 100%;
+
+  &__wrapper {
+    padding-top: 31px;
+    padding-bottom: 25px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    max-width: 1440px;
+    padding-left: 20px;
+    padding-right: 20px;
 
-    &__wrapper {
-        padding-top: 31px;
-        padding-bottom: 25px;
-    }
+    @media (min-width: 768px) {
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+  }
 
-    &__inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        max-width: 1440px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    &__button {
-        margin-bottom: 34px;
-    }
+  &__button {
+    margin-bottom: 34px;
+  }
 }

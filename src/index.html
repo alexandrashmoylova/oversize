@@ -32,25 +32,25 @@
       <main class="main">
         <section class="hero">
           <div class="hero__wrapper">
-            <div class="intro">
-              <div class="intro__media">
-                <video
-                  class="intro__video"
-                  preload="auto"
-                  autoplay
-                  muted
-                  loop
-                  poster="src/img/truck-poster.jpg"
-                >
-                  <source src="src/video/truck.mp4" type="video/mp4" />
-                  <source src="src/video/truck.webm" type="video/webm" />
-                </video>
-              </div>
-            </div>
-            <div class="hero__content">
+            <div class="hero__inner">
               <h1 class="hero__title title">
                 Перевозка негабаритных и тяжеловесных грузов
               </h1>
+            </div>
+          </div>
+          <div class="intro">
+            <div class="intro__media">
+              <video
+                class="intro__video"
+                preload="auto"
+                autoplay
+                muted
+                loop
+                poster="src/img/truck-poster.jpg"
+              >
+                <source src="src/video/truck.mp4" type="video/mp4" />
+                <source src="src/video/truck.webm" type="video/webm" />
+              </video>
             </div>
           </div>
         </section>
@@ -69,24 +69,30 @@
             <div class="swiper swiper1">
               <div class="swiper-wrapper">
                 <div class="swiper-slide swiper1-slide">
-                  <img
-                    src="src/img/white-barrel.jpg"
-                    width="475"
-                    height="848"
-                    alt="Изображение груза доставленного из Китая"
-                  />
+                  <picture>
+                    <img
+                      src="src/img/white-barrel.jpg"
+                      srcset="src/img/white-barrel@2x.jpg 2x"
+                      width="475"
+                      height="848"
+                      alt="Изображение груза доставленного из Китая"
+                    />
+                  </picture>
                   <div class="slide-text">
                     <h2 class="slide-text__title">Доставка грузов из Китая</h2>
                   </div>
                 </div>
 
                 <div class="swiper-slide swiper1-slide">
-                  <img
-                    src="src/img/custom.jpg"
-                    width="375"
-                    height="548"
-                    alt="Изображение оформления груза на таможне"
-                  />
+                  <picture>
+                    <img
+                      src="src/img/custom.jpg"
+                      srcset="src/img/custom@2x.jpg 2x"
+                      width="375"
+                      height="548"
+                      alt="Изображение оформления груза на таможне"
+                    />
+                  </picture>
                   <div class="slide-text">
                     <h2 class="slide-text__title">
                       Таможенное оформление грузов
@@ -94,23 +100,30 @@
                   </div>
                 </div>
                 <div class="swiper-slide swiper1-slide">
-                  <img
-                    src="src/img/weight-service.jpg"
-                    width="375"
-                    height="548"
-                    alt="Изображение грузоподъемной техники"
-                  />
+                  <picture>
+                    <img
+                      src="src/img/weight-service.jpg"
+                      srcset="src/img/weight-service@2x.jpg 2x"
+                      width="375"
+                      height="548"
+                      alt="Изображение грузоподъемной техники"
+                    />
+                  </picture>
+
                   <div class="slide-text">
                     <h2 class="slide-text__title">Грузоподъемная техника</h2>
                   </div>
                 </div>
                 <div class="swiper-slide swiper1-slide">
-                  <img
-                    src="src/img/big-tube.jpg"
-                    width="375"
-                    height="548"
-                    alt="Изображение крупного негабаритного груза"
-                  />
+                  <picture>
+                    <img
+                      src="src/img/big-tube.jpg"
+                      srcset="src/img/big-tube@2x.jpg 2x"
+                      width="375"
+                      height="548"
+                      alt="Изображение крупного негабаритного груза"
+                    />
+                  </picture>
                   <div class="slide-text">
                     <h2 class="slide-text__title">
                       Перевозка негабаритных тяжеловесных грузов
@@ -118,12 +131,15 @@
                   </div>
                 </div>
                 <div class="swiper-slide swiper1-slide">
-                  <img
-                    src="src/img/rigging.jpg"
-                    width="375"
-                    height="548"
-                    alt="Изображение такелажных работ"
-                  />
+                  <picture>
+                    <img
+                      src="src/img/rigging.jpg"
+                      srcset="src/img/rigging@2x.jpg 2x"
+                      width="375"
+                      height="548"
+                      alt="Изображение такелажных работ"
+                    />
+                  </picture>
                   <div class="slide-text">
                     <h2 class="slide-text__title">Такелажные работы</h2>
                   </div>
@@ -180,10 +196,10 @@
                 />
               </a>
               <p class="footer__adress">Самарская область</p>
-              <p class="footer__adress">г. Тольятти</p>
+              <p class="footer__adress footer__adress--city">г. Тольятти</p>
               <a class="footer__tel" href="tel:+79297133700"
-              >+79297133700</a
-            >
+                >+7 929 713 37 00</a
+              >
               <a class="footer__button button">Заказать</a>
             </div>
           </div>

@@ -1,9 +1,15 @@
 .slider-gallery {
+  min-width: 320px;
+
   &__wrapper {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 29px 37px 43px;
+
+    @media (min-width: 768px) {
+        padding: 50px 60px;
+      }
   }
 }
