@@ -1,3 +1,4 @@
 import './style.scss';
-import './script.js';
+import './swiper.js';
+import './app.js';
 
