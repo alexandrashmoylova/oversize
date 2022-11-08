@@ -8,7 +8,10 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint:editorconfig": "editorconfig-checker",
+    "lint:stylelint": "stylelint \"src/scss/**/*.{css,scss,sass}\"",
+    "test": "npm run lint:editorconfig && npm run lint:stylelint"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +21,7 @@
     "@babel/preset-env": "^7.12.13",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.7",
+    "editorconfig-checker": "^4.0.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^1.6.2",
@@ -27,6 +31,7 @@
     "style-loader": "^2.0.0",
     "stylelint": "^14.14.1",
     "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-webpack-plugin": "^3.3.0",
     "svg-spritemap-webpack-plugin": "github:cascornelissen/svg-spritemap-webpack-plugin",
     "svg-url-loader": "^7.1.1",

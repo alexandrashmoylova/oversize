@@ -1,4 +1,17 @@
+/*
+  Import vendor libraries
+*/
+@import "vendor/_normalize.scss";
+
+/*
+  Import other libraries
+*/
 @import '../node_modules/swiper/swiper-bundle.min.css';
+
+
+/*
+  Import all other blocks
+*/
 @import './scss/fonts.scss';
 @import './scss/common.scss';
 @import './scss/blocks/header.scss';
