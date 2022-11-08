@@ -1,23 +1,47 @@
-const contactBlock = document.querySelector('.contact-block');
-const popup = document.querySelector('.contact-block__inner');
-const openPopupButton = document.querySelector('.footer__button');
-const closePopupButton = document.querySelector('.contact-block__close');
+const contactBlock = document.querySelector(".contact-block");
+const popup = document.querySelector(".contact-block__inner");
+const openPopupButton = document.querySelector(".footer__button");
+const closePopupButton = document.querySelector(".contact-block__close");
+const form = document.querySelector(".contact-form");
+const isEscapeKey = (evt) => evt.key === "Escape";
 
-openPopupButton.addEventListener('click', (evt) => {
+const onPopupEscKeydown = (evt) => {
+  if (isEscapeKey(evt)) {
     evt.preventDefault();
-    contactBlock.classList.add('contact-block--active');
-    popup.classList.add('contact-block__inner--active');
-});
+    closePopup();
+  }
+};
 
-closePopupButton.addEventListener('click',() => {
-    contactBlock.classList.remove('contact-block--active');
-    popup.classList.remove('contact-block__inner--active');
-});
+const onPopupCloseButtonClick = () => {
+  closePopup();
+};
 
-document.addEventListener('click', (evt) => {
-    if(evt.target === contactBlock) {
-        contactBlock.classList.remove('contact-block--active'); 
-        popup.classList.remove('contact-block__inner--active');
-        popup.classList.remove('contact-block__inner--active');
-    }
-});
+const onWindowCloseByClick = (evt) => {
+  closePopupByClick(evt);
+};
+
+function closePopupByClick(evt) {
+  if (evt.target === contactBlock) {
+    closePopup();
+  }
+}
+
+function closePopup() {
+  contactBlock.classList.remove("contact-block--active");
+  popup.classList.remove("contact-block__inner--active");
+  document.removeEventListener("keydown", onPopupEscKeydown);
+  document.removeEventListener("click", onPopupCloseButtonClick);
+  document.removeEventListener("click", onWindowCloseByClick);
+  form.reset();
+}
+
+function openPopup(evt) {
+  evt.preventDefault();
+  contactBlock.classList.add("contact-block--active");
+  popup.classList.add("contact-block__inner--active");
+  closePopupButton.addEventListener("click", onPopupCloseButtonClick);
+  document.addEventListener("keydown", onPopupEscKeydown);
+  document.addEventListener("click", onWindowCloseByClick);
+}
+
+openPopupButton.addEventListener("click", openPopup);
