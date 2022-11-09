@@ -45,3 +45,20 @@ function openPopup(evt) {
 }
 
 openPopupButton.addEventListener("click", openPopup);
+
+form.addEventListener('submit', formSend);
+
+async function formSend(evt) {
+  evt.preventDefault();
+  let error = formValidate(form);
+}
+
+function formValidate(form) {
+  let error = 0;
+  let requiredInputs = document.querySelectorAll("input[required]");
+
+  for(let i = 0; i < requiredInputs.length; i++) {
+    const input = requiredInputs[i];
+  }
+  console.log(input);
+}

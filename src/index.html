@@ -289,11 +289,12 @@
                 <span class="visually-hidden">Закрыть</span>
               </a>
             </div>
-            <form class="contact-form" action="" method="post">
+            <form class="contact-form" id="contact-form" action="" method="post">
               <div class="contact-form__group">
-                <label class="contact-form__label" for="">Ваше имя</label>
+                <label class="contact-form__label" for="contact-name">Ваше имя</label>
                 <input
                   class="contact-form__input"
+                  id="contact-name"
                   name="name"
                   type="text"
                   placeholder="Ваше имя"
@@ -301,9 +302,10 @@
                 />
               </div>
               <div class="contact-form__group">
-                <label class="contact-form__label" for="">Ваше телефон</label>
+                <label class="contact-form__label" for="contact-tel">Ваше телефон</label>
                 <input
                   class="contact-form__input"
+                  id="contact-tel"
                   name="tel"
                   type="tel"
                   placeholder="Ваш телефон"
