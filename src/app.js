@@ -1,9 +1,15 @@
-const contactBlock = document.querySelector(".contact-block");
-const popup = document.querySelector(".contact-block__inner");
-const openPopupButton = document.querySelector(".footer__button");
-const closePopupButton = document.querySelector(".contact-block__close");
-const form = document.querySelector(".contact-form");
-const isEscapeKey = (evt) => evt.key === "Escape";
+import Inputmask from 'inputmask';
+import JustValidate from 'just-validate';
+
+const contactBlock = document.querySelector('.contact-block');
+const popup = document.querySelector('.contact-block__inner');
+const openPopupButton = document.querySelector('.footer__button');
+const closePopupButton = document.querySelector('.contact-block__close');
+const submitPopupButton = document.querySelector('.contact-form__button');
+const form = document.getElementById('contact-form');
+const email = document.getElementById('email');
+
+const isEscapeKey = (evt) => evt.key === 'Escape';
 
 const onPopupEscKeydown = (evt) => {
   if (isEscapeKey(evt)) {
@@ -27,38 +33,111 @@ function closePopupByClick(evt) {
 }
 
 function closePopup() {
-  contactBlock.classList.remove("contact-block--active");
-  popup.classList.remove("contact-block__inner--active");
-  document.removeEventListener("keydown", onPopupEscKeydown);
-  document.removeEventListener("click", onPopupCloseButtonClick);
-  document.removeEventListener("click", onWindowCloseByClick);
+  contactBlock.classList.remove('contact-block--active');
+  popup.classList.remove('contact-block__inner--active');
+  document.removeEventListener('keydown', onPopupEscKeydown);
+  document.removeEventListener('click', onPopupCloseButtonClick);
+  document.removeEventListener('click', onWindowCloseByClick);
   form.reset();
 }
 
 function openPopup(evt) {
   evt.preventDefault();
-  contactBlock.classList.add("contact-block--active");
-  popup.classList.add("contact-block__inner--active");
-  closePopupButton.addEventListener("click", onPopupCloseButtonClick);
-  document.addEventListener("keydown", onPopupEscKeydown);
-  document.addEventListener("click", onWindowCloseByClick);
+  contactBlock.classList.add('contact-block--active');
+  popup.classList.add('contact-block__inner--active');
+  closePopupButton.addEventListener('click', onPopupCloseButtonClick);
+  document.addEventListener('keydown', onPopupEscKeydown);
+  document.addEventListener('click', onWindowCloseByClick);
 }
 
-openPopupButton.addEventListener("click", openPopup);
+openPopupButton.addEventListener('click', openPopup);
 
-form.addEventListener('submit', formSend);
+const tel = document.querySelector('.input-tel');
+const telMask = new Inputmask('+79999999999');
+telMask.mask(tel);
 
-async function formSend(evt) {
-  evt.preventDefault();
-  let error = formValidate(form);
-}
+const validation = new JustValidate('form',
+{
+  errorFieldCssClass: 'is-invalid',
+  errorFieldStyle: {
+    border: '1px solid #940101',
+  },
+  errorLabelCssClass: 'is-label-invalid',
+  errorLabelStyle: {
+    color: '#940101',
+    textDecoration: 'underlined',
+  },
+  focusInvalidField: false,
+  lockForm: false,
+});
 
-function formValidate(form) {
-  let error = 0;
-  let requiredInputs = document.querySelectorAll("input[required]");
+validation
+  .addField('.input-name', [
+    {
+      rule: 'minLength',
+      value: 2,
+      errorMessage: 'Поле должно содержать минимум три символа',
+    },
+    {
+      rule: 'maxLength',
+      value: 30,
+    },
+    {
+      rule: 'required',
+      value: true,
+      errorMessage: 'Это поле обязательно',
+    },
+  ])
+  .addField('.input-email', [
+    {
+      rule: 'required',
+      value: true,
+      errorMessage: 'Введите ваш email',
+    },
+    {
+      rule: 'email',
+      value: true,
+      errorMessage: 'Введите корректный email',
+    },
+  ])
+  .addField('.input-tel', [
+    {
+      rule: 'required',
+      value: true,
+      errorMessage: 'Телефон обязателен',
+    },
+    {
+      rule: 'function',
+      validator: function () {
+        const phone = tel.inputmask.unmaskedvalue();
+        return phone.length === 10;
+      },
+      errorMessage: 'Введите корректный телефон',
+    },
+  ])
+  .onSuccess((event) => {
+    console.log('Validation passes and form submited');
 
-  for(let i = 0; i < requiredInputs.length; i++) {
-    const input = requiredInputs[i];
-  }
-  console.log(input);
-}
+    let formData = new FormData(event.target);
+    console.log(...formData);
+
+    let response = fetch('sendmail.php', {
+      method: 'POST',
+      body: formData,
+    });
+    response.then((res) => res.json())
+    .then((json) => {
+        if (json.error) {
+          // fail validation
+          alert("Failed!");
+        } else {
+          // success
+        }
+    })
+    .catch(error => {
+         alert("Error!");
+    });
+
+    event.target.reset();
+  });
+

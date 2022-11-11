@@ -266,9 +266,9 @@
           </div>
         </footer>
         <section class="contact-block">
-          <!-- <h2 class="visually-hidden">Форма обратной связи</h2> -->
+          <h2 class="visually-hidden">Форма обратной связи</h2>
           <div class="contact-block__inner">
-            <div class="contact-block__wrapper">
+            <div class="contact-block__top">
               <a href="index.html" class="contact-block__logo">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -289,28 +289,44 @@
                 <span class="visually-hidden">Закрыть</span>
               </a>
             </div>
-            <form class="contact-form" id="contact-form" action="" method="post">
+            <form
+              class="contact-form"
+              id="contact-form"
+              action="#"
+              method="post"
+            >
               <div class="contact-form__group">
-                <label class="contact-form__label" for="contact-name">Ваше имя</label>
-                <input
-                  class="contact-form__input"
-                  id="contact-name"
-                  name="name"
-                  type="text"
-                  placeholder="Ваше имя"
-                  required
-                />
+                <label class="contact-form__label" for="contact-name">
+                  <input
+                    class="contact-form__input input-name"
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    placeholder="Ваше имя"
+                  />
+                </label>
               </div>
               <div class="contact-form__group">
-                <label class="contact-form__label" for="contact-tel">Ваше телефон</label>
-                <input
-                  class="contact-form__input"
-                  id="contact-tel"
-                  name="tel"
-                  type="tel"
-                  placeholder="Ваш телефон"
-                  required
-                />
+                <label class="contact-form__label" for="contact-tel">
+                  <input
+                    class="contact-form__input input-tel"
+                    id="contact-tel"
+                    name="tel"
+                    type="tel"
+                    placeholder="Ваш телефон"
+                  />
+                </label>
+              </div>
+              <div class="contact-form__group">
+                <label class="contact-form__label" for="contact-email">
+                  <input
+                    class="contact-form__input input-email"
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    placeholder="Ваш email"
+                  />
+                </label>
               </div>
               <button class="contact-form__button" type="submit">
                 Заказать

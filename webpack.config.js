@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
-const StylelintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
     output: {
@@ -22,7 +21,6 @@ module.exports = {
             filename: 'index.html',
             template: 'src/index.html'
         }),
-        new StylelintPlugin(options),
     ],
     module: {
         rules: [
@@ -43,7 +41,10 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
-                type: 'asset/resource'
+                type: 'asset/resource',
+                use: [
+                    'file-loader'
+                ]
             },
             {
                 test: /\.svg/,

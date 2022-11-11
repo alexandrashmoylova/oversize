@@ -8,10 +8,7 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "lint:editorconfig": "editorconfig-checker",
-    "lint:stylelint": "stylelint \"src/scss/**/*.{css,scss,sass}\"",
-    "test": "npm run lint:editorconfig && npm run lint:stylelint"
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -29,10 +26,7 @@
     "sass": "^1.32.6",
     "sass-loader": "^10.2.1",
     "style-loader": "^2.0.0",
-    "stylelint": "^14.14.1",
-    "stylelint-config-standard": "^29.0.0",
     "stylelint-config-standard-scss": "^6.1.0",
-    "stylelint-webpack-plugin": "^3.3.0",
     "svg-spritemap-webpack-plugin": "github:cascornelissen/svg-spritemap-webpack-plugin",
     "svg-url-loader": "^7.1.1",
     "url-loader": "^4.1.1",
@@ -45,6 +39,8 @@
     "last 2 Firefox versions"
   ],
   "dependencies": {
+    "inputmask": "^5.0.7",
+    "just-validate": "^3.8.1",
     "swiper": "^8.4.4"
   }
 }

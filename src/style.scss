@@ -1,7 +1,7 @@
 /*
   Import vendor libraries
 */
-@import "vendor/_normalize.scss";
+@import "./scss/vendor/normalize.scss";
 
 /*
   Import other libraries
@@ -35,3 +35,4 @@
 @import './scss/blocks/footer.scss';
 @import './scss/blocks/contact-block.scss';
 @import './scss/blocks/contact-form.scss';
+@import './scss/blocks/is-invalid.scss';
