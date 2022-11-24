@@ -9,7 +9,15 @@
     padding: 29px 37px 43px;
 
     @media (min-width: 768px) {
-        padding: 50px 60px;
+        padding: 50px 40px;
       }
+
+      @media (min-width: 1028px) {
+        padding: 70px 60px;
+    }
+
+    @media (min-width: 1200px) {
+      padding: 70px 110px;
+    }
   }
 }
