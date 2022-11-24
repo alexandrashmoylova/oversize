@@ -1,19 +1,48 @@
 .advantages-services {
+  background: linear-gradient(0deg, #ffed00, #ffffff 62%);
+
+  @media (min-width: 600px) {
+    position: relative;
+    width: 50%;
+  }
+
+  &__inner {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 768px) {
+        padding: 60px 40px;
+      }
+
+    @media (min-width: 800px) {
+      position: relative;
+      padding: 0;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: calc(18 / 16);
+
+
     @media (min-width: 600px) {
-        position: relative;
+      margin-bottom: 35px;
+      padding: 0;
+      text-decoration: underline;
     }
 
-    &__title {
-        padding-top: 40px;
-        margin-bottom: 30px;
-
-        @media (min-width: 600px) {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            margin: 0;
-            padding: 0;
-        }
+    @media (min-width: 800px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 220px;
+      margin-bottom: 0;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
     }
+  }
 }
