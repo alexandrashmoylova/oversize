@@ -129,13 +129,14 @@ validation
     .then((json) => {
         if (json.error) {
           // fail validation
-          alert("Failed!");
+          alert('Failed!');
         } else {
           // success
+          alert('YEAH')
         }
     })
     .catch(error => {
-         alert("Error!");
+         alert('Error!');
     });
 
     event.target.reset();
