@@ -31,9 +31,9 @@ try {
   $mail->SMTPAuth   = true;
 
   // Настройки вашей почты
-  $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
+  $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
   $mail->Username   = 'mailbox@oversize-group.ru'; // Логин на почте
-  $mail->Password   = ''; // Пароль на почте
+  $mail->Password   = 'aBGMg2gqiTqyunbQ9xqj'; // Пароль на почте
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
@@ -41,20 +41,6 @@ try {
 
   // Получатель письма
   $mail->addAddress('mailbox@oversize-group.ru');
-
-  // Прикрипление файлов к письму
-//   if (!empty($file['name'][0])) {
-//     for ($ct = 0; $ct < count($file['tmp_name']); $ct++) {
-//       $uploadfile = tempnam(sys_get_temp_dir(), sha1($file['name'][$ct]));
-//       $filename = $file['name'][$ct];
-//       if (move_uploaded_file($file['tmp_name'][$ct], $uploadfile)) {
-//           $mail->addAttachment($uploadfile, $filename);
-//           $rfile[] = "Файл $filename прикреплён";
-//       } else {
-//           $rfile[] = "Не удалось прикрепить файл $filename";
-//       }
-//     }
-//   }
 
   // Отправка сообщения
   $mail->isHTML(true);

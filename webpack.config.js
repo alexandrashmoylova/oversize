@@ -2,11 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     output: {
         path: path.join(__dirname, '/build'),
         filename: 'index.bundle.js',
+        assetModuleFilename: 'assets/[name].[ext]',
     },
     devServer: {
         port: 3015,
@@ -21,6 +23,18 @@ module.exports = {
             filename: 'index.html',
             template: 'src/index.html'
         }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: __dirname + '/src/sendmail.php', // откуда
+                    to: __dirname + '/build' // куда
+                },
+                {
+                    from: __dirname + '/src/php-mailer', // откуда
+                    to: __dirname + '/build' // куда
+                },
+            ]
+        })
     ],
     module: {
         rules: [
@@ -32,7 +46,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(scss)$/,
+                test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
@@ -40,11 +54,12 @@ module.exports = {
                 ],
             },
             {
+                test: /\.html$/,
+                use: 'html-loader'
+            },
+            {
                 test: /\.(png|jpe?g|gif|svg)$/i,
-                type: 'asset/resource',
-                use: [
-                    'file-loader'
-                ]
+                type: 'asset/resource'
             },
             {
                 test: /\.svg/,
