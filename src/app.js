@@ -121,24 +121,14 @@ validation
     let formData = new FormData(event.target);
     console.log(...formData);
 
-    let response = fetch('sendmail.php', {
+    fetch('sendmail.php', {
       method: 'POST',
       body: formData,
-    });
-    response.then((res) => res.json())
-    .then((json) => {
-        if (json.error) {
-          // fail validation
-          alert('Failed!');
-        } else {
-          // success
-          alert('YEAH')
-        }
     })
-    .catch(error => {
-         alert('Error!');
+    .then(function(data) {
+      console.log(data);
+      console.log('Отправлено');
+      event.target.reset();
     });
-
-    event.target.reset();
   });
 
