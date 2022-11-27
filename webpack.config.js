@@ -30,8 +30,8 @@ module.exports = {
                     to: __dirname + '/build' // куда
                 },
                 {
-                    from: __dirname + '/src/php-mailer', // откуда
-                    to: __dirname + '/build' // куда
+                    from: __dirname + '/src/phpmailer', // откуда
+                    to: __dirname + '/build/phpmailer' // куда
                 },
             ]
         })
