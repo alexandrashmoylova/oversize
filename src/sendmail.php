@@ -25,7 +25,6 @@ $body = "<table style='width: 100%;'>$body</table>";
 // Настройки PHPMailer
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 
-try {
   $mail->isSMTP();
   $mail->CharSet = "UTF-8";
   $mail->SMTPAuth   = true;
@@ -47,8 +46,14 @@ try {
   $mail->Subject = $title;
   $mail->Body = $body;
 
-  $mail->send();
+  if ($mail->send()) {
+    $message = 'Ошибка';
+  } else {
+    $message = 'Данные отправлены';
+  };
 
-} catch (Exception $e) {
-  $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
-}
+  $response = ['message' => $message];
+
+  header('Content-type: application/json');
+  echo json_encode($response);
+  ?>
