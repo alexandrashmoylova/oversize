@@ -121,14 +121,16 @@ validation
     let formData = new FormData(event.target);
     console.log(...formData);
 
-    fetch('sendmail.php', {
+    let response = fetch('sendmail.php', {
       method: 'POST',
       body: formData,
-    })
-    .then(function(data) {
-      console.log(data);
-      console.log('Отправлено');
-      event.target.reset();
     });
+    if (response.ok) {
+      let result = response.json();
+      alert(result.message);
+      form.reset();
+    } else {
+      alert('Ошибка');
+    }
   });
 
