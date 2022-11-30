@@ -8,8 +8,6 @@ const closePopupButton = document.querySelector('.contact-block__close');
 const submitPopupButton = document.querySelector('.contact-form__button');
 const form = document.getElementById('contact-form');
 const email = document.getElementById('email');
-const trucksSection = document.querySelector('.trucks');
-const path = trucks.querySelector('path');
 
 const isEscapeKey = (evt) => evt.key === 'Escape';
 

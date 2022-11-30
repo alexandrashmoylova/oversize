@@ -3,27 +3,109 @@
   background-color: #fff;
 
   &__wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 35px;
     gap: 50px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('/src/img/svg/marker.svg');
+      width: 51px;
+      height: 73px;
+    }
+
+    &::before {
+      top: 49px;
+      left: 64px;
+    }
+
+    &::after {
+      top: 181px;
+      left: 326px;
+    }
   }
 
-  path {
-    animation-name: active-path;
-    animation-fill-mode: forwards;
-    animation-duration: 12s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-
-    // stroke-dasharray: 100;
-    stroke-dashoffset: 1490;
+  &__light {
+    position: absolute;
+    top: 55px;
+    left: 248px;
+    width: 9px;
+    height: 9px;
+    background-color: yellow;
+    border-radius: 2px;
+    animation: color 3s linear infinite;
   }
 
-  @keyframes active-path {
+  &__light-front {
+    position: absolute;
+    top: 92px;
+    left: 269px;
+    width: 4px;
+    height: 4px;
+    background-color: yellow;
+    animation: color 3s linear infinite;
+  }
+
+  @keyframes color {
+    from {
+      background-color: yellow;
+    } 
     to {
-      stroke: greenyellow;
+      background-color: red;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 128px;
+    left: 113px;
+  }
+
+  // path {
+  //   animation-name: active-path;
+  //   animation-fill-mode: forwards;
+  //   animation-duration: 4s;
+  //   animation-timing-function: linear;
+  //   animation-iteration-count: infinite;
+
+  //   // stroke-dasharray: 100;
+  //   stroke-dashoffset: 190;
+  // }
+
+  // @keyframes active-path {
+  //   to {
+  //     stroke-dashoffset: 0;
+  //   }
+  // }
+
+  .paths {
+    fill: none;
+    stroke: #969696;
+    stroke-dasharray: 6;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  
+  .mask {
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 3s linear alternate infinite;
+  }
+  
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
       stroke-dashoffset: 0;
     }
   }
