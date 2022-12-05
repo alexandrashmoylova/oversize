@@ -9,61 +9,46 @@
     align-items: center;
     padding: 35px;
     gap: 50px;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      background-image: url('/src/img/svg/marker.svg');
-      width: 51px;
-      height: 73px;
-    }
-
-    &::before {
-      top: 49px;
-      left: 64px;
-    }
-
-    &::after {
-      top: 181px;
-      left: 326px;
-    }
   }
 
-  &__light {
-    position: absolute;
-    top: 55px;
-    left: 248px;
-    width: 9px;
-    height: 9px;
-    background-color: yellow;
-    border-radius: 2px;
-    animation: color 3s linear infinite;
-  }
+  // &__top {
+  //   position: relative;
 
-  &__light-front {
-    position: absolute;
-    top: 92px;
-    left: 269px;
-    width: 4px;
-    height: 4px;
-    background-color: yellow;
-    animation: color 3s linear infinite;
-  }
+  //   &::before {
+  //     content: '';
+  //     position: absolute;
+  //     top: 20px;
+  //     left: 203px;
+  //     width: 9px;
+  //     height: 9px;
+  //     background-color: yellow;
+  //     border-radius: 2px;
+  //     animation: color 3s linear infinite;
+  //   }
 
-  @keyframes color {
-    from {
-      background-color: yellow;
-    } 
-    to {
-      background-color: red;
-    }
-  }
+  //   &::after {
+  //     content: '';
+  //     position: absolute;
+  //     top: 54px;
+  //     left: 222px;
+  //     width: 4px;
+  //     height: 4px;
+  //     background-color: yellow;
+  //     animation: color 3s linear infinite;
+  //   }
+  // }
+
+  // @keyframes color {
+  //   from {
+  //     background-color: yellow;
+  //   } 
+  //   to {
+  //     background-color: red;
+  //   }
+  // }
 
   svg {
-    position: absolute;
-    top: 128px;
-    left: 113px;
+    width: 100%;
   }
 
   // path {
@@ -107,6 +92,40 @@
     }
     to {
       stroke-dashoffset: 0;
+    }
+  }
+
+  .path-light {
+    opacity: 0;
+    animation: opacity 2s ease-in-out normal infinite;
+  }
+
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .path-headlight {
+    fill: #edc255;
+    animation: fill 2s ease-out normal infinite;
+  }
+
+  @keyframes fill {
+    0% {
+      fill: #ece1c5;
+    }
+    50% {
+      fill: #edc255;
+    }
+    75% {
+      fill: #ff9102;;
+    }
+    100% {
+      fill: #ff2802;
     }
   }
 }
