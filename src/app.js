@@ -131,12 +131,14 @@ validation
       if (json.error) {
         // fail validation
         errorMessage.style.display = 'block';
+        form.style.display = 'none';
+        form.reset();
       } else {
         // success
         successMessage.style.display = 'block';
         form.style.display = 'none';
+        form.reset();
       }
-      form.reset();
   })
   .catch(error => {
     alert('Error!');
