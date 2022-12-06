@@ -8,7 +8,8 @@ const closePopupButton = document.querySelector('.contact-block__close');
 const submitPopupButton = document.querySelector('.contact-form__button');
 const form = document.getElementById('contact-form');
 const email = document.getElementById('email');
-
+const successMessage = document.querySelector('.success-message');
+const errorMessage = document.querySelector('.error-message');
 const isEscapeKey = (evt) => evt.key === 'Escape';
 
 const onPopupEscKeydown = (evt) => {
@@ -125,12 +126,19 @@ validation
       method: 'POST',
       body: formData,
     });
-    if (response.ok) {
-      let result = response.json();
-      alert(result.message);
+    response.then((res) => res.json())
+    .then((json) => {
+      if (json.error) {
+        // fail validation
+        errorMessage.style.display = 'block';
+      } else {
+        // success
+        successMessage.style.display = 'block';
+        form.style.display = 'none';
+      }
       form.reset();
-    } else {
-      alert('Ошибка');
-    }
-  });
-
+  })
+  .catch(error => {
+    alert('Error!');
+});
+});
