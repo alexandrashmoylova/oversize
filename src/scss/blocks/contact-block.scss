@@ -40,7 +40,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 90px;
+      margin-bottom: 50px;
   }
 
   &__logo {
@@ -49,9 +49,6 @@
   }
 
   &__close {
-      position: absolute;
-      top: 51px;
-      right: 40px;
       width: 26px;
       height: 26px;
       cursor: pointer;
@@ -70,7 +67,7 @@
       span::after {
         content: '';
         position: absolute;
-        top: 10px;
+        top: 12px;
         display: block;
         width: 26px;
         height: 2px;
