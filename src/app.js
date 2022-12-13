@@ -3,7 +3,7 @@ import JustValidate from 'just-validate';
 
 const contactBlock = document.querySelector('.contact-block');
 const popup = document.querySelector('.contact-block__inner');
-const openPopupButton = document.querySelector('.footer__button');
+const openPopupButton = document.querySelector('.slider-gallery__button');
 const closePopupButton = document.querySelector('.contact-block__close');
 const submitPopupButton = document.querySelector('.contact-form__button');
 const form = document.getElementById('contact-form');
@@ -150,5 +150,4 @@ validation
   })
   .catch(error => {
     alert('Error!');
-});
 });
