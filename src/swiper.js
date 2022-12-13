@@ -1,5 +1,5 @@
 import Swiper from "swiper/bundle";
-
+const width = window.innerWidth
 const swiper = new Swiper(".swiper1", {
   pagination: {
     el: ".swiper-pagination",
@@ -18,3 +18,11 @@ const swiperGallery = new Swiper(".swiper2", {
   },
   autoplay: false,
 });
+
+function destroySwiper() {
+  if (width > 767) {
+    swiper.destroy(true, true);
+  }
+};
+
+destroySwiper();
