@@ -126,6 +126,14 @@ validation
       method: 'POST',
       body: formData,
     });
+    if (response.ok) {
+      let result = response.json();
+      alert(result.message);
+      form.reset();
+    } else {
+      alert('Ошибка');
+    }
+  });
     response.then((res) => res.json())
     .then((json) => {
       if (json.error) {
