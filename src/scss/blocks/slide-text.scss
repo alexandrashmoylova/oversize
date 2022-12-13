@@ -11,7 +11,7 @@
   box-sizing: border-box;
 
   @media (min-width: 768px) {
-    padding: 40px 30px;
+    padding: 20px;
   }
 
   &__title {
@@ -22,5 +22,11 @@
     text-align: center;
     text-transform: uppercase;
     text-align: center;
+
+    @media (min-width: 768px) {
+      max-width: 235px;
+      font-size: 15px;
+      line-height: calc(17 / 15);
+    }
   }
 }
