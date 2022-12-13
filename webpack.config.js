@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -17,7 +16,6 @@ module.exports = {
         open: true
     },
     plugins: [
-        new SVGSpritemapPlugin(),
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
