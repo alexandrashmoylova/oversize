@@ -29,7 +29,6 @@
     "sass-loader": "^10.2.1",
     "style-loader": "^2.0.0",
     "stylelint-config-standard-scss": "^6.1.0",
-    "svg-spritemap-webpack-plugin": "github:cascornelissen/svg-spritemap-webpack-plugin",
     "svg-url-loader": "^7.1.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.20.1",

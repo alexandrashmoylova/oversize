@@ -2,11 +2,112 @@
   min-width: 320px;
   background-color: #fff;
 
+  @media (min-width: 500px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @media (min-width: 769px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @media (min-width: 1028px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: 1028px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
   &__wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 35px;
-    gap: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (min-width: 768px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    @media (min-width: 1028px) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    @media (min-width: 1200px) {
+      padding-left: 120px;
+      padding-right: 120px;
+    }
+  }
+
+  svg {
+    width: 100%;
+  }
+
+  .paths {
+    fill: none;
+    stroke: #969696;
+    stroke-dasharray: 6;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  
+  .mask {
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 3s linear alternate infinite;
+  }
+  
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .path-light {
+    opacity: 0;
+    animation: opacity 2s ease-in-out normal infinite;
+  }
+
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .path-headlight {
+    fill: #edc255;
+    animation: fill 2s ease-out normal infinite;
+  }
+
+  @keyframes fill {
+    0% {
+      fill: #ece1c5;
+    }
+    50% {
+      fill: #edc255;
+    }
+    75% {
+      fill: #ff9102;;
+    }
+    100% {
+      fill: #ff2802;
+    }
   }
 }
