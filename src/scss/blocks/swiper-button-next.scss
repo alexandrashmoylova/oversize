@@ -1,6 +1,7 @@
 .swiper-button-next {
   width: 0;
   height: 0;
+  top: 45%;
   right: 10px;
   border-top: 10px solid transparent;
   border-right: 10px solid #000;
@@ -9,6 +10,14 @@
   transform: rotate(180deg);
 
   @media (min-width: 768px) {
-    right: 20px;
+    right: 30px;
+  }
+
+  @media (min-width: 1028px) {
+    right: 40px;
+  }
+
+  @media (min-width: 1200px) {
+    right: 80px;
   }
 }

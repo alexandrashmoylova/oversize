@@ -1,54 +1,85 @@
 .footer {
   min-width: 320px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 
-  &__wrapper {
-    padding-top: 20px;
-    padding-bottom: 40px;
-
-    @media (min-width: 768px) {
-        padding-top: 30px;
-        padding-bottom: 60px;
-    }
+  @media (min-width: 768px) {
+    padding-top: 30px;
+    padding-bottom: 60px;
   }
 
-  &__inner {
+  @media (min-width: 1028px) {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  &__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
 
-
     @media (min-width: 768px) {
-        padding-left: 60px;
-        padding-right: 60px;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    @media (min-width: 1028px) {
+      flex-direction: row;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    @media (min-width: 1200px) {
+      flex-direction: row;
+      padding-left: 110px;
+      padding-right: 110px;
     }
   }
 
   &__logo {
     margin-bottom: 29px;
+
+    @media (min-width: 1028px) {
+      width: calc(100% / 3);
+      margin-bottom: 0;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 30px;
+
+    @media (min-width: 1028px) {
+      width: calc(100% / 3);
+      margin-bottom: 0;
+    }
   }
 
   &__adress {
+    @media (min-width: 1028px) {
+      width: calc(100% / 3);
+      margin-bottom: 0;
+    }
+  }
+
+  &__adress-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 190px;
     margin: 0;
     font-size: 13px;
     line-height: 1;
     text-align: center;
     color: #222221;
 
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       font-size: 16px;
       line-height: 1;
     }
 
-    &--city {
-      margin-bottom: 30px;
-    }
-
-    @media (min-width: 600px) {
-      margin-bottom: 20px;
-      font-size: 25px;
-      line-height: 1;
+    @media (min-width: 768px) {
+      margin-left: auto;
     }
   }
 }
