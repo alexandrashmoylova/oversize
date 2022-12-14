@@ -5,7 +5,7 @@
   padding-bottom: 25px;
 
   @media (min-width: 1028px) {
-  padding-top: 40px;
+    padding-top: 40px;
   }
 
   &__wrapper {
@@ -41,5 +41,5 @@
     @media (min-width: 1028px) {
       display: none;
     }
-}
+  }
 }

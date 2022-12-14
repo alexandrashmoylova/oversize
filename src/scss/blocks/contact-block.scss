@@ -37,10 +37,10 @@
   }
 
   &__top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
   }
 
   &__logo {
@@ -49,41 +49,41 @@
   }
 
   &__close {
+    position: absolute;
+    top: 51px;
+    right: 40px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    transition: opacity ease 0.5s;
+
+    &:hover {
+      opacity: 0.2;
+    }
+
+    span {
+      position: relative;
+      font-size: 0;
+    }
+
+    span::before,
+    span::after {
+      content: "";
       position: absolute;
-      top: 51px;
-      right: 40px;
+      top: 12px;
+      display: block;
       width: 26px;
-      height: 26px;
-      cursor: pointer;
-      transition: opacity ease 0.5s;
+      height: 2px;
+      border-radius: 2px;
+      background: #000;
+    }
 
-      &:hover {
-          opacity: 0.2;
-      }
+    span::before {
+      transform: rotate(45deg);
+    }
 
-      span {
-        position: relative;
-        font-size: 0;
-      }
-
-      span::before,
-      span::after {
-        content: '';
-        position: absolute;
-        top: 12px;
-        display: block;
-        width: 26px;
-        height: 2px;
-        border-radius: 2px;
-        background: #000;
-      }
-
-      span::before {
-        transform: rotate(45deg);
-      }
-
-      span::after {
-        transform: rotate(-45deg);
-      }
+    span::after {
+      transform: rotate(-45deg);
+    }
   }
 }

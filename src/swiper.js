@@ -1,15 +1,15 @@
 import Swiper from "swiper/bundle";
-const width = window.innerWidth
+const width = window.innerWidth;
 const swiper = new Swiper(".swiper1", {
   pagination: {
     el: ".swiper-pagination",
     type: "bullets",
   },
 
-//   autoplay: {
-//     delay: 3000,
-//     disableOnInteraction: false,
-//   },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 });
 
 const swiperGallery = new Swiper(".swiper2", {
@@ -25,6 +25,6 @@ function destroySwiper() {
     swiper.destroy(true, true);
     swiper.update();
   }
-};
+}
 
 destroySwiper();
