@@ -1,14 +1,14 @@
-import Inputmask from "inputmask";
-import JustValidate from "just-validate";
+import Inputmask from 'inputmask';
+import JustValidate from 'just-validate';
 
-const contactBlock = document.querySelector(".contact-block");
-const popup = document.querySelector(".contact-block__inner");
-const openPopupButton = document.querySelector(".slider-gallery__button");
-const closePopupButton = document.querySelector(".contact-block__close");
-const form = document.getElementById("contact-form");
-const successMessage = document.querySelector(".success-message");
-const errorMessage = document.querySelector(".error-message");
-const isEscapeKey = (evt) => evt.key === "Escape";
+const contactBlock = document.querySelector('.contact-block');
+const popup = document.querySelector('.contact-block__inner');
+const openPopupButton = document.querySelector('.slider-gallery__button');
+const closePopupButton = document.querySelector('.contact-block__close');
+const form = document.getElementById('contact-form');
+const successMessage = document.querySelector('.success-message');
+const errorMessage = document.querySelector('.error-message');
+const isEscapeKey = (evt) => evt.key === 'Escape';
 
 const onPopupEscKeydown = (evt) => {
   if (isEscapeKey(evt)) {
@@ -32,92 +32,92 @@ function closePopupByClick(evt) {
 }
 
 function closePopup() {
-  contactBlock.classList.remove("contact-block--active");
-  popup.classList.remove("contact-block__inner--active");
-  document.removeEventListener("keydown", onPopupEscKeydown);
-  document.removeEventListener("click", onPopupCloseButtonClick);
-  document.removeEventListener("click", onWindowCloseByClick);
+  contactBlock.classList.remove('contact-block--active');
+  popup.classList.remove('contact-block__inner--active');
+  document.removeEventListener('keydown', onPopupEscKeydown);
+  document.removeEventListener('click', onPopupCloseButtonClick);
+  document.removeEventListener('click', onWindowCloseByClick);
   form.reset();
 }
 
 function openPopup(evt) {
   evt.preventDefault();
-  contactBlock.classList.add("contact-block--active");
-  popup.classList.add("contact-block__inner--active");
-  closePopupButton.addEventListener("click", onPopupCloseButtonClick);
-  document.addEventListener("keydown", onPopupEscKeydown);
-  document.addEventListener("click", onWindowCloseByClick);
+  contactBlock.classList.add('contact-block--active');
+  popup.classList.add('contact-block__inner--active');
+  closePopupButton.addEventListener('click', onPopupCloseButtonClick);
+  document.addEventListener('keydown', onPopupEscKeydown);
+  document.addEventListener('click', onWindowCloseByClick);
 }
 
-openPopupButton.addEventListener("click", openPopup);
+openPopupButton.addEventListener('click', openPopup);
 
-const tel = document.querySelector(".input-tel");
-const telMask = new Inputmask("+79999999999");
+const tel = document.querySelector('.input-tel');
+const telMask = new Inputmask('+79999999999');
 telMask.mask(tel);
 
-const validation = new JustValidate("form", {
-  errorFieldCssClass: "is-invalid",
+const validation = new JustValidate('form', {
+  errorFieldCssClass: 'is-invalid',
   errorFieldStyle: {
-    border: "1px solid #940101",
+    border: '1px solid #940101',
   },
-  errorLabelCssClass: "is-label-invalid",
+  errorLabelCssClass: 'is-label-invalid',
   errorLabelStyle: {
-    color: "#940101",
-    textDecoration: "underlined",
+    color: '#940101',
+    textDecoration: 'underlined',
   },
   focusInvalidField: false,
   lockForm: false,
 });
 
 validation
-  .addField(".input-name", [
+  .addField('.input-name', [
     {
-      rule: "minLength",
+      rule: 'minLength',
       value: 2,
-      errorMessage: "Поле должно содержать минимум три символа",
+      errorMessage: 'Поле должно содержать минимум три символа',
     },
     {
-      rule: "maxLength",
+      rule: 'maxLength',
       value: 30,
     },
     {
-      rule: "required",
+      rule: 'required',
       value: true,
-      errorMessage: "Это поле обязательно",
+      errorMessage: 'Это поле обязательно',
     },
   ])
-  .addField(".input-email", [
+  .addField('.input-email', [
     {
-      rule: "required",
+      rule: 'required',
       value: true,
-      errorMessage: "Введите ваш email",
+      errorMessage: 'Введите ваш email',
     },
     {
-      rule: "email",
+      rule: 'email',
       value: true,
-      errorMessage: "Введите корректный email",
+      errorMessage: 'Введите корректный email',
     },
   ])
-  .addField(".input-tel", [
+  .addField('.input-tel', [
     {
-      rule: "required",
+      rule: 'required',
       value: true,
-      errorMessage: "Телефон обязателен",
+      errorMessage: 'Телефон обязателен',
     },
     {
-      rule: "function",
+      rule: 'function',
       validator: function () {
         const phone = tel.inputmask.unmaskedvalue();
         return phone.length === 10;
       },
-      errorMessage: "Введите корректный телефон",
+      errorMessage: 'Введите корректный телефон',
     },
   ])
   .onSuccess((event) => {
     let formData = new FormData(event.target);
 
-    let response = fetch("sendmail.php", {
-      method: "POST",
+    let response = fetch('sendmail.php', {
+      method: 'POST',
       body: formData,
     });
     response
@@ -125,17 +125,17 @@ validation
       .then((json) => {
         if (json.error) {
           // fail validation
-          errorMessage.style.display = "block";
-          form.style.display = "none";
+          errorMessage.style.display = 'block';
+          form.style.display = 'none';
           form.reset();
         } else {
           // success
-          successMessage.style.display = "block";
-          form.style.display = "none";
+          successMessage.style.display = 'block';
+          form.style.display = 'none';
           form.reset();
         }
       })
       .catch((error) => {
-        alert("Error!");
+        alert('Error!');
       });
   });
