@@ -6,6 +6,7 @@ const popup = document.querySelector('.contact-block__inner');
 const openPopupButton = document.querySelector('.slider-gallery__button');
 const closePopupButton = document.querySelector('.contact-block__close');
 const form = document.getElementById('contact-form');
+const submitButton = document.querySelector('.contact-form__button');
 const successMessage = document.querySelector('.success-message');
 const errorMessage = document.querySelector('.error-message');
 const isEscapeKey = (evt) => evt.key === 'Escape';
@@ -115,7 +116,6 @@ validation
   ])
   .onSuccess((event) => {
     let formData = new FormData(event.target);
-
     let response = fetch('sendmail.php', {
       method: 'POST',
       body: formData,
@@ -130,6 +130,7 @@ validation
           form.reset();
         } else {
           // success
+          blockSubmitButton();
           successMessage.style.display = 'block';
           form.style.display = 'none';
           form.reset();
@@ -139,3 +140,8 @@ validation
         alert('Error!');
       });
   });
+
+  function blockSubmitButton() {
+    submitButton.diabled = true;
+    submitButton.textContent = 'Минуточку...'
+  }
