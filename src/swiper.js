@@ -1,15 +1,17 @@
 import Swiper from "swiper/bundle";
 const width = window.innerWidth;
 const swiper = new Swiper(".swiper1", {
+  direction: 'horizontal',
+  loop: true,
   pagination: {
     el: ".swiper-pagination",
     type: "bullets",
   },
 
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
 });
 
 const swiperGallery = new Swiper(".swiper2", {
